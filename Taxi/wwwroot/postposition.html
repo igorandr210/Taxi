@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <div id="setPostition">
+        <form>
+            <label for="lat">Lat</label>
+            <input type="text" id="lat" />
+            <label for="lon">Lon</label>
+            <input type="text" id="lon" />
+            <input type="button" id="sendGeoData" value="відправити" />
+        </form>
+    </div>
+
+<script src="js/signalr.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <script>
+        //let hubUrl = 'https://localhost:44315/route';
+        let hubUrl = 'http://localhost:52841/route';
+        console.log(hubUrl);
+        
+        const hubConnection = new signalR.HubConnectionBuilder()
+            .withUrl(hubUrl, {
+                    accessTokenFactory: () => {
+                        return "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxQG1haWwucnUiLCJqdGkiOiJjMDQ1OTgyMi1mODdmLTQzYjQtYmRjNi1jNTNkMmM2YjBkN2UiLCJpYXQiOjE1MzU5ODcwMDgsImlkIjoiZDAxYmExNzctNGQyMS00ZDc1LTk0Y2EtNTcwMmVjZGE3NDg3Iiwicm9sIjpbImRyaXZlcl9hY2Nlc3MiLCJjdXN0b21lcl9hY2Nlc3MiXSwiY3VzdG9tZXJJZCI6ImU2N2U5ODc1LWY2NzQtNDEyMC1iMGVhLTAwZGVhNTFmYTU2MSIsImRyaXZlcklkIjoiN2MzOWEwMWEtYWJiMy00MDZmLWJiYjEtN2M2M2Q3OWU4Y2RjIiwibmJmIjoxNTM1OTg3MDA4LCJleHAiOjE1MzU5OTQyMDgsImlzcyI6IndlYkFwaSIsImF1ZCI6Imh0dHA6Ly9sb2NhbGhvc3Q6NTI4NDEvIn0.SyZYa4bAfiWzP3_nYoenbMp_chM1Lv-S3pF5yS2VDNs";
+                    }
+                })
+            .configureLogging(signalR.LogLevel.Information).build()
+            ;
+        
+        document.getElementById("sendGeoData").addEventListener("click", function (data) {
+            hubConnection.invoke('ConnectDriver');
+            let lonVar = document.getElementById("lon").value;
+            let latVar = document.getElementById("lat").value;
+            $.ajax({
+                url: "/api/trips/updateroute",
+                contentType: "application/json",
+                method: "POST",
+                data: JSON.stringify({
+                    Longitude: lonVar,
+                    latitude: latVar
+                }),
+                success: function (data) {
+                    console.log("succes");
+                }
+            });
+        });
+
+        hubConnection.start();
+    </script>
+</body>
+</html>

@@ -1,0 +1,1 @@
+﻿UPDATE "Drivers" SET "Location" = st_SetSrid(ST_MakePoint(@lon, @lat), 4326) where "Id" = @DriverId

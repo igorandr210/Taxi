@@ -1,0 +1,1 @@
+﻿UPDATE "Trips" SET "To" = st_SetSrid(ST_MakePoint(@lon, @lat), 4326) where "CustomerId" = @CustomerId

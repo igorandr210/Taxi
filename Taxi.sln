@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2035
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Taxi", "Taxi\Taxi.csproj", "{8C9A619A-A545-40B9-A727-E7B7B084B1FE}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TaxiCoinCoreLibrary", "TaxiCoinCoreLibrary\TaxiCoinCoreLibrary.csproj", "{24FB0CD0-DC5D-47AC-8791-562A97FDD400}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{C534FD6B-E56D-4710-8069-0B8587C24D88}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8C9A619A-A545-40B9-A727-E7B7B084B1FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8C9A619A-A545-40B9-A727-E7B7B084B1FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8C9A619A-A545-40B9-A727-E7B7B084B1FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8C9A619A-A545-40B9-A727-E7B7B084B1FE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{24FB0CD0-DC5D-47AC-8791-562A97FDD400}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{24FB0CD0-DC5D-47AC-8791-562A97FDD400}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{24FB0CD0-DC5D-47AC-8791-562A97FDD400}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{24FB0CD0-DC5D-47AC-8791-562A97FDD400}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C534FD6B-E56D-4710-8069-0B8587C24D88}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C534FD6B-E56D-4710-8069-0B8587C24D88}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C534FD6B-E56D-4710-8069-0B8587C24D88}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C534FD6B-E56D-4710-8069-0B8587C24D88}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {43E171B9-5A12-46D4-9091-22CAE08E1A72}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,13 @@
+{
+ "AWSEBDockerrunVersion": "1",
+  "Image": {
+    "Name": "vosmushko/taxi:post49",
+    "Update": "false"
+  },
+ "Ports": [
+   {
+     "ContainerPort": "80"
+   }
+ ],
+ "Logging": "/var/log"
+}

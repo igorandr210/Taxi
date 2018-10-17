@@ -1,0 +1,5 @@
+﻿SELECT *
+FROM "Drivers" where "ConnectionId" is not null
+ORDER BY "Location" <-> st_setsrid(st_makepoint( @lon , @lat),4326)
+LIMIT @items 
+offset (@items*(@page-1))

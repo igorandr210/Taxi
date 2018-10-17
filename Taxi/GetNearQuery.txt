@@ -1,0 +1,5 @@
+﻿SELECT *
+FROM "Trips" where "DriverId" is null
+ORDER BY "From" <-> st_setsrid(st_makepoint( @lon , @lat),4326)
+LIMIT @items 
+offset (@items*(@page-1))

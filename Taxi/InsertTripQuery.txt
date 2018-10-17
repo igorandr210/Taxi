@@ -1,0 +1,6 @@
+﻿INSERT INTO "Trips" ("Id", "CustomerId", "DriverId","LastLat","LastLon"
+,"Distance","LastUpdateTime","CreationTime","DriverTakeTripTime","StartTime","FinishTime","Price","ContractId",
+"From", "To") 
+VALUES (@Id, @CustomerId, @DriverId, @LastLat, @LastLon
+,@Distance,@LastUpdateTime,@CreationTime,@DriverTakeTripTime,@StartTime,@FinishTime,@Price,@ContractId,
+ST_SetSRID(ST_MakePoint(@lon1, @lat1),4326), ST_SetSRID(ST_MakePoint(@lon2, @lat2),4326));
